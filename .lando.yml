@@ -26,8 +26,6 @@ tooling:
     service: node
   node:
     service: node
-  drush:
-    cmd: ./bin/drush
 proxy:
   appserver_nginx:
     - d9.local
