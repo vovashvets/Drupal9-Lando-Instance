@@ -1,0 +1,37 @@
+name: d9
+recipe: drupal9
+config:
+  php: '7.4'
+  via: nginx:1.18
+  webroot: web
+  database: mysql:5.7
+services:
+  appserver:
+    xdebug: true
+    config:
+      php: dev/php.ini
+  database:
+    creds:
+      database: drupal9
+      user: drupal9
+      password: drupal9
+  node:
+    type: node:10
+  mailhog:
+    type: mailhog
+    hogfrom:
+      - appserver
+tooling:
+  npm:
+    service: node
+  node:
+    service: node
+  drush:
+    cmd: ./bin/drush
+proxy:
+  appserver_nginx:
+    - d9.local
+  mailhog:
+    - mail.d9.local
+
+
