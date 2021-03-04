@@ -2,4 +2,4 @@
 Just a base for projects.
 
 - lando start
-- lando composer install
+- lando composer create-project drupal/recommended-project somename
