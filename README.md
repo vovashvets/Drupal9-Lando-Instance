@@ -3,3 +3,4 @@ Just a base for projects.
 
 - lando start
 - lando composer create-project drupal/recommended-project somename
+- lando composer require drush/drush
